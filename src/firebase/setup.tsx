@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBsmBJd15Nx6hYAS4wrx2xpeKHgZBrv-V4",
-  authDomain: "olx-app-15177.firebaseapp.com",
-  projectId: "olx-app-15177",
-  storageBucket: "olx-app-15177.appspot.com",
-  messagingSenderId: "1066647643379",
-  appId: "1:1066647643379:web:a60f43bb896b88b4f98386"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const googleProvider = new GoogleAuthProvider()
+export const googleProvider = new GoogleAuthProvider();
